@@ -6,15 +6,18 @@ using RabbitMQ.Client.Events;
 using StorageService.Services;
 
 // Load configuration from appsettings.json and environment variables
+
 var configuration = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("appsettings.json", optional: true)
+    .AddJsonFile("appsettings.json")
     .AddEnvironmentVariables()
     .Build();
 
 var rabbitMqConfig = new RabbitMQConfiguration();
 configuration.GetSection("RabbitMQ").Bind(rabbitMqConfig);
 var filePath = configuration.GetValue<string>("FilePath") ?? "/tmp/visits.log";
+
+Console.WriteLine(JsonSerializer.Serialize(rabbitMqConfig));
 
 // Ensure file path exists
 Directory.CreateDirectory(Path.GetDirectoryName(filePath));

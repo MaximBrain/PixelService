@@ -3,13 +3,13 @@ FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
 # Copy csproj and restore as distinct layers
-COPY ./PixelService/*.csproj ./PixelService/
-COPY ./PixelShared/*.csproj ./PixelShared/
+COPY ./PixelService/PixelService.csproj ./PixelService/
+COPY ./PixelShared/PixelShared.csproj ./PixelShared/
 RUN dotnet restore ./PixelService/PixelService.csproj
 
 # Copy everything else and build the app
 COPY . .
-RUN dotnet publish -c Release -o out ./PixelService/PixelService.csproj
+RUN dotnet publish -c Release -o out ./PixelService/
 
 # Stage 2: Runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime

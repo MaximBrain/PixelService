@@ -5,6 +5,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{14EAE182-92EC-4FE3-9DF0-A5669E01EF26}"
 	ProjectSection(SolutionItems) = preProject
 		.dockerignore = .dockerignore
+		PixelServiceDockerFile = PixelServiceDockerFile
+		StorageServiceDockerFile = StorageServiceDockerFile
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageService", "StorageService\StorageService.csproj", "{28C814AF-E16C-4457-AC7F-CABBB268ECE5}"

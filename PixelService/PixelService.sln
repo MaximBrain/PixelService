@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageService", "StorageSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelShared", "PixelShared\PixelShared.csproj", "{6324F8A6-412E-48CE-9DCA-62D1D0826853}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelService.Tests", "PixelService.Tests\PixelService.Tests.csproj", "{97BA1290-18A7-42CD-A11A-C486186F4055}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageService.Tests", "StorageService.Tests\StorageService.Tests.csproj", "{6C23BA5E-761A-41D6-A04D-E53D561CCFBF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,5 +35,13 @@ Global
 		{6324F8A6-412E-48CE-9DCA-62D1D0826853}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6324F8A6-412E-48CE-9DCA-62D1D0826853}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6324F8A6-412E-48CE-9DCA-62D1D0826853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97BA1290-18A7-42CD-A11A-C486186F4055}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97BA1290-18A7-42CD-A11A-C486186F4055}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97BA1290-18A7-42CD-A11A-C486186F4055}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97BA1290-18A7-42CD-A11A-C486186F4055}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C23BA5E-761A-41D6-A04D-E53D561CCFBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C23BA5E-761A-41D6-A04D-E53D561CCFBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C23BA5E-761A-41D6-A04D-E53D561CCFBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C23BA5E-761A-41D6-A04D-E53D561CCFBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

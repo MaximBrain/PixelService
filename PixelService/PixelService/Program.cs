@@ -7,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddSingleton<HttpContextHandler>();
+builder.Services.AddScoped<RabbitMqSender>();
 builder.Services.Configure<RabbitMQConfiguration>(builder.Configuration.GetSection("RabbitMQ"));
 
 var app = builder.Build();
@@ -20,20 +22,14 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapGet("/track", async (HttpContext context, ContextHandler ContextHandler) =>
+app.MapGet("/track", async (HttpContext context, RabbitMqSender rabbitMqSender, HttpContextHandler httpContextHandler) =>
     {
         try
         {
-            const string base64Pixel = "R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
-            
-            // Collect information
-            var referrer = context.Request.Headers["Referer"].ToString();
-            var userAgent = context.Request.Headers["User-Agent"].ToString();
-            var ipAddress = context.Connection.RemoteIpAddress?.ToString() ?? throw new InvalidOperationException("IP Address is missing");
-            
-            ContextHandler.SendMessageToQueue(new HttpRequestInfo(referrer, userAgent, ipAddress));
+            rabbitMqSender.SendMessageToQueue(httpContextHandler.GetHttpRequestInfo(context));
             
             context.Response.ContentType = "image/gif";
+            const string base64Pixel = "R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
             await context.Response.WriteAsync(base64Pixel, context.RequestAborted);
         } 
         catch (Exception ex)

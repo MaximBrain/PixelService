@@ -44,7 +44,7 @@ consumer.Received += async (_, ea) =>
     var body = ea.Body.ToArray();
     var message = JsonSerializer.Deserialize<HttpRequestInfo>(body);
     
-    var logEntry = logService.GetLogEntry(message);
+    var logEntry = LogService.GetLogEntry(message);
 
     await File.AppendAllTextAsync(filePath, logEntry);
 };

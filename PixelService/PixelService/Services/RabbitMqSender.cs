@@ -6,12 +6,13 @@ using RabbitMQ.Client;
 
 namespace PixelService.Services;
 
-public record ContextHandler(IOptions<RabbitMQConfiguration> RabbitMqOptions)
+public record RabbitMqSender(IOptions<RabbitMQConfiguration> RabbitMqOptions)
 {
     public void SendMessageToQueue(HttpRequestInfo httpRequestInfo)
     {
-        var rabbitMq = RabbitMqOptions.Value ?? throw new InvalidOperationException("RabbitMQ configuration is missing");
         var message = JsonSerializer.Serialize(httpRequestInfo);
+        
+        var rabbitMq = RabbitMqOptions.Value ?? throw new InvalidOperationException("RabbitMQ configuration is missing");
         var factory = new ConnectionFactory
         {
             Uri = new Uri($"{rabbitMq.Protocol}://{rabbitMq.UserName}:{rabbitMq.Password}@{rabbitMq.Host}:{rabbitMq.Port}"),

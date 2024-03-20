@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelService", "PixelService\PixelService.csproj", "{2506F02B-A65C-4944-AAF9-D43793617B98}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{14EAE182-92EC-4FE3-9DF0-A5669E01EF26}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StorageService", "StorageService\StorageService.csproj", "{28C814AF-E16C-4457-AC7F-CABBB268ECE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PixelShared", "PixelShared\PixelShared.csproj", "{6324F8A6-412E-48CE-9DCA-62D1D0826853}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2506F02B-A65C-4944-AAF9-D43793617B98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2506F02B-A65C-4944-AAF9-D43793617B98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2506F02B-A65C-4944-AAF9-D43793617B98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2506F02B-A65C-4944-AAF9-D43793617B98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28C814AF-E16C-4457-AC7F-CABBB268ECE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28C814AF-E16C-4457-AC7F-CABBB268ECE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28C814AF-E16C-4457-AC7F-CABBB268ECE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28C814AF-E16C-4457-AC7F-CABBB268ECE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6324F8A6-412E-48CE-9DCA-62D1D0826853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6324F8A6-412E-48CE-9DCA-62D1D0826853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6324F8A6-412E-48CE-9DCA-62D1D0826853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6324F8A6-412E-48CE-9DCA-62D1D0826853}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
